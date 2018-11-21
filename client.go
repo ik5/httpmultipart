@@ -42,6 +42,7 @@ func (p *Params) AddReadFile(name, filename string) (bool, error) {
 	if err != nil {
 		return false, err
 	}
+	defer f.Close()
 
 	stat, err := f.Stat()
 	if err != nil {
